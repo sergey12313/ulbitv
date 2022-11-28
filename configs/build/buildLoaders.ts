@@ -1,6 +1,7 @@
 import {ModuleOptions} from "webpack";
-
-export const buildLoaders = (): ModuleOptions => {
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import {BuildOptions} from "./types/configs";
+export const buildLoaders = ({isDev}: BuildOptions): ModuleOptions => {
     return {
         rules: [
             {
@@ -11,11 +12,18 @@ export const buildLoaders = (): ModuleOptions => {
             {
                 test: /\.s[ac]ss$/i,
                 use: [
-                    // Creates `style` nodes from JS strings
-                    "style-loader",
-                    // Translates CSS into CommonJS
-                    "css-loader",
-                    // Compiles Sass to CSS
+                    isDev? "style-loader" : MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: {
+                                auto: (resPath: string) => Boolean(resPath.includes('.module')),
+                                localIdentName: isDev ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64:8]'
+                            },
+
+                        }
+                    }
+                    ,
                     "sass-loader",
                 ],
             },

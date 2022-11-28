@@ -15,6 +15,7 @@ export default (env: BuildEnv) => {
     }
     const port  = !!(env.port) ? parseInt(env.port, 10) : 3000
 
+    const isDev = mode === 'development'
 
     const paths: BuildPath = {
         entry: path.resolve(__dirname, 'src', 'index.ts'),
@@ -23,11 +24,10 @@ export default (env: BuildEnv) => {
     }
 
 
-    const isDev = mode === 'development'
 
 
     const config: webpack.Configuration =  buildWebpackConfig({
-        mode: 'development',
+        mode,
         paths,
         isDev,
         port

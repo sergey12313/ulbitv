@@ -2,22 +2,35 @@
 import webpack  from 'webpack';
 
 import {buildWebpackConfig} from "./configs/build/buildWebpackConfig";
-import {BuildMode, BuildPath} from "./configs/build/types/configs";
+import {BuildEnv, BuildMode, BuildPath} from "./configs/build/types/configs";
 import path from "path";
 
 
-const paths: BuildPath = {
-    entry: path.resolve(__dirname, 'src', 'index.ts'),
-    build: path.resolve(__dirname, 'build'),
-    html: path.resolve('public', 'index.html')
+
+export default (env: BuildEnv) => {
+    let mode: BuildMode = 'development'
+
+    if (env.mode && env.mode === 'development '|| env.mode === "production") {
+        mode = env.mode as BuildMode
+    }
+    const port  = !!(env.port) ? parseInt(env.port, 10) : 3000
+
+
+    const paths: BuildPath = {
+        entry: path.resolve(__dirname, 'src', 'index.ts'),
+        build: path.resolve(__dirname, 'build'),
+        html: path.resolve('public', 'index.html')
+    }
+
+
+    const isDev = mode === 'development'
+
+
+    const config: webpack.Configuration =  buildWebpackConfig({
+        mode: 'development',
+        paths,
+        isDev,
+        port
+    })
+    return config
 }
-
-const mode: BuildMode ='development'
-const isDev = mode === 'development'
-
-const config: webpack.Configuration =  buildWebpackConfig({
-    mode: 'development',
-    paths,
-    isDev
-})
-export default config

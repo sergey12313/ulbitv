@@ -1,5 +1,6 @@
 import {FC} from "react";
 
-export const Main: FC = () => {
+const MainPage: FC = () => {
     return <div>This is Main page</div>
 }
+export default MainPage

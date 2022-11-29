@@ -5,10 +5,10 @@ import {MainPageAsync} from "./pages/MainPage/MainPage.async";
 import {AboutPageAsync} from "./pages/AboutPage/AboutPage.async";
 import React from "react";
 
-export const router = createBrowserRouter([
+export const routes = createBrowserRouter([
     {
       path: '/',
-        element: <React.Suspense fallback={<div>Loading</div>}><MainLayout/></React.Suspense>,
+        element: <MainLayout/>,
 
         errorElement: <div >error</div>,
         children: [

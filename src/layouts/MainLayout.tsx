@@ -1,8 +1,13 @@
 import {FC} from "react";
 import {Link, Outlet} from "react-router-dom";
 
+import {useTheme} from "../theme/useTheme";
+
 export const MainLayout: FC = () => {
-    return <>
+    const {theme, toggleTheme} = useTheme()
+
+
+    return <div className={`app ${theme}` }>
         <header>
             <Link to="/" >
             Home
@@ -10,9 +15,10 @@ export const MainLayout: FC = () => {
             <Link to="/about" >
                 About
             </Link>
+            <button onClick={toggleTheme}> toggle theme </button>
         </header>
         <main>
             <Outlet/>
         </main>
-    </>
+    </div>
 }

@@ -1,24 +1,26 @@
 import {createBrowserRouter} from "react-router-dom";
 
-import {MainLayout} from "./layouts/MainLayout";
-import {MainPageAsync} from "./pages/MainPage/MainPage.async";
-import {AboutPageAsync} from "./pages/AboutPage/AboutPage.async";
+
+
 import React from "react";
+import {RootLayout} from "./RootLayout";
+import {MainPage} from "pages/MainPage";
+import {AboutPage} from "pages/AboutPage";
 
 export const routes = createBrowserRouter([
     {
       path: '/',
-        element: <MainLayout/>,
+        element: <RootLayout/>,
 
         errorElement: <div >error</div>,
         children: [
             {
                 index: true,
-                element: <MainPageAsync/>
+                element: <MainPage/>
             },
             {
                 path: '/about',
-                element: <AboutPageAsync/>
+                element: <AboutPage/>
             }
 
         ]

@@ -20,6 +20,6 @@ export const buildWebpackConfig = (options: BuildOptions): webpack.Configuration
         devServer: isDev? buildDevServer(options) : undefined,
         module: buildLoaders(options),
         plugins: buildPlugins(options),
-        resolve: buildResolvers()
+        resolve: buildResolvers(options)
 
 }}

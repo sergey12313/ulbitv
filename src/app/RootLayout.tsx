@@ -1,24 +1,17 @@
 import React, { FC } from 'react';
-import {classNames} from "shared/lib/classNames";
-import {Link, Outlet} from "react-router-dom";
+import {cn} from "shared/lib/classNames";
+import { Outlet} from "react-router-dom";
 import {useTheme} from "shared/context/theme-context/useTheme";
+import {Navbar} from "widgets/Navbar";
 
 
 interface RootLayoutProps {}
 
 
 export const RootLayout: FC<RootLayoutProps> = () => {
-    const {theme, toggleTheme} = useTheme()
-  return <div className={ classNames('app', theme) }>
-      <header>
-          <Link to="/" >
-              Home
-          </Link>
-          <Link to="/about" >
-              About
-          </Link>
-          <button onClick={toggleTheme}> toggle theme </button>
-      </header>
+    const {theme} = useTheme()
+  return <div className={ cn('app', theme) }>
+  <Navbar/>
       <main>
           <React.Suspense fallback={<div>Loading</div>}>
                 <Outlet/>

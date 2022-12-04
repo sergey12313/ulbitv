@@ -12,9 +12,8 @@ const processObject = (c: object): string => {
     return result.join(' ');
 };
 
-export const classNames = (...classes: Array<any>): string => {
+export const cn = (...classes: Array<any>): string => {
     const result: Array<string> = [];
-
     classes.forEach((el) => {
         if (typeof el === 'string') {
             if (el === '') {
@@ -35,10 +34,16 @@ export const classNames = (...classes: Array<any>): string => {
             }
             result.push(el.toString());
         } else if (Array.isArray(el)) {
-            result.push(classNames(el));
+            result.push(cn(...el));
         } else if (typeof el === 'object') {
+
             result.push(processObject(el));
         }
     });
-    return result.join(' ');
+    const _result =  result.join(' ').trim();
+
+    if (_result.length === 0) {
+        return undefined
+    }
+    return _result
 };

@@ -4,6 +4,7 @@ import {useTheme} from "shared/context/theme-context/useTheme";
 import {cn} from "shared/lib/classNames";
 import {AppLink} from "shared/ui/AppLink";
 import {RoutePath} from "app/configs/routes";
+import {ThemeSwitcher} from "widgets/ThemeSwitcher";
 interface NavbarProps extends  React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>{
 
 }
@@ -19,7 +20,7 @@ export const Navbar: FC<NavbarProps> = ({className, ...otherProps}) => {
       ulbitv
     </h1>
     <div className={styles.links}>
-      <button onClick={toggleTheme}> toggle theme </button>
+      <ThemeSwitcher/>
       <AppLink to={RoutePath.main} >
         Home
       </AppLink>

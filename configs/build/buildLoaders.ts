@@ -27,6 +27,19 @@ export const buildLoaders = ({isDev}: BuildOptions): ModuleOptions => {
                     "sass-loader",
                 ],
             },
+            {
+                test: /\.svg$/,
+                use: ['@svgr/webpack'],
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                    },
+                ],
+            },
+
         ],
     }
 }

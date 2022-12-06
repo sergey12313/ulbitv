@@ -6,7 +6,7 @@ import {routes} from "app/configs/routes";
 import './app/styles/index.scss'
 import {ThemeProvider} from "shared/context";
 import {SidebarProvider} from "app/context/SidebarContext";
-
+import './app/configs/i18n/i18n'
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

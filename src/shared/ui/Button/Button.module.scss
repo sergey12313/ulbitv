@@ -36,6 +36,31 @@
       }
     }
   }
+  &.outline {
+    background: var(--colors-transparent);
+    &:focus-visible {
+      box-shadow: var(--shadows-outline);
+    }
+    &.dark {
+
+
+      &:hover {
+        background: var(--colors-whiteAlpha-300);
+      }
+      &:active {
+        background: var(--colors-whiteAlpha-400);
+      }
+    }
+    &.light {
+
+      &:hover {
+        background: var(--colors-gray-200);
+      }
+      &:active {
+        background: var(--colors-gray-300);
+      }
+    }
+  }
   &.primary {
     &:focus-visible {
       box-shadow: var(--shadows-outline);

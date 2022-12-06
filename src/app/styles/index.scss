@@ -11,3 +11,11 @@
   color: var(--secondary-color);
   min-height: 100vh;
 }
+.main {
+  display: flex;
+  height: calc(100vh - var(--navbar-height));
+}
+
+.main__content {
+  flex-grow: 1;
+}

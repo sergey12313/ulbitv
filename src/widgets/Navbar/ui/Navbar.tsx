@@ -1,10 +1,12 @@
-import React, { FC } from 'react';
+import React, {FC} from 'react';
 import styles from './Navbar.module.scss'
-import {useTheme} from "shared/context/theme-context/useTheme";
 import {cn} from "shared/lib/classNames";
 import {AppLink} from "shared/ui/AppLink";
 import {RoutePath} from "app/configs/routes";
-import {ThemeSwitcher} from "widgets/ThemeSwitcher";
+import {Button, ButtonVariant} from "shared/ui/Button";
+import MenuIcon from '../assets/Menu.svg'
+import {useSidebarContext} from "app/context/SidebarContext";
+
 interface NavbarProps extends  React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>{
 
 }
@@ -12,15 +14,19 @@ interface NavbarProps extends  React.DetailedHTMLProps<React.HTMLAttributes<HTML
 
 
 export const Navbar: FC<NavbarProps> = ({className, ...otherProps}) => {
-  const { toggleTheme} = useTheme()
+  const {toggle} = useSidebarContext()
 
 
   return <header className={cn([styles.navbar, className, ])} {...otherProps}>
-    <h1>
-      ulbitv
-    </h1>
+    <div className={styles.leftBlock}>
+      <Button variant={ButtonVariant.OUTLINE} className={styles.menuButton}> <MenuIcon width={36} height={36} onClick={toggle}/></Button>
+      <h1 >
+        Ulbi TV
+      </h1>
+    </div>
+
     <div className={styles.links}>
-      <ThemeSwitcher/>
+
       <AppLink to={RoutePath.main} >
         Home
       </AppLink>

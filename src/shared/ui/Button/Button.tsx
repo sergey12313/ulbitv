@@ -5,6 +5,7 @@ import {useTheme} from "shared/context";
 export const enum ButtonVariant {
   DEFAULT ="default",
   PRIMARY ='primary',
+  OUTLINE= 'outline'
 }
 
 export interface ButtonProps extends  React.DetailedHTMLProps<React.HTMLAttributes<HTMLButtonElement>, HTMLButtonElement>{

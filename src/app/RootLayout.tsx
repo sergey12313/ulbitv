@@ -13,12 +13,14 @@ export const RootLayout: FC<RootLayoutProps> = () => {
     const {theme} = useTheme()
   return <div className={ cn('app', theme) }>
   <Navbar/>
-      <main>
+      <main className="main">
           <Sidebar/>
-          <React.Suspense fallback={<div>Loading</div>}>
+          <div className="main__content">
+              <React.Suspense fallback={<div>Loading</div>}>
+                  <Outlet/>
+              </React.Suspense>
+          </div>
 
-                <Outlet/>
-          </React.Suspense>
       </main>
   </div>
 };

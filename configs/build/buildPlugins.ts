@@ -1,4 +1,4 @@
-import webpack, {  WebpackPluginInstance } from "webpack";
+import webpack, {HotModuleReplacementPlugin, WebpackPluginInstance} from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import {BuildOptions} from "./types/configs";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
@@ -11,5 +11,6 @@ export const buildPlugins = ({paths}: BuildOptions): Array<WebpackPluginInstance
             chunkFilename: 'css/[name].[contenthash:].css',
         }),
         new HtmlWebpackPlugin({ template:  paths.html}),
+        new HotModuleReplacementPlugin()
     ]
 }

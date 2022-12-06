@@ -20,6 +20,7 @@ export default (env: BuildEnv) => {
         entry: path.resolve(__dirname, 'src', 'index.tsx'),
         src: path.resolve(__dirname, 'src'),
         build: path.resolve(__dirname, 'build'),
+        public: path.resolve(__dirname, 'public'),
         html: path.resolve('public', 'index.html')
     }
 

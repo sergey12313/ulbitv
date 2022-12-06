@@ -6,6 +6,8 @@ import {RoutePath} from "app/configs/routes";
 import {Button, ButtonVariant} from "shared/ui/Button";
 import MenuIcon from '../assets/Menu.svg'
 import {useSidebarContext} from "app/context/SidebarContext";
+import {useTranslation} from "react-i18next";
+import {LangSwitcher} from "widgets/LangSwitcher";
 
 interface NavbarProps extends  React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>{
 
@@ -15,7 +17,7 @@ interface NavbarProps extends  React.DetailedHTMLProps<React.HTMLAttributes<HTML
 
 export const Navbar: FC<NavbarProps> = ({className, ...otherProps}) => {
   const {toggle} = useSidebarContext()
-
+  const {t} = useTranslation()
 
   return <header className={cn([styles.navbar, className, ])} {...otherProps}>
     <div className={styles.leftBlock}>
@@ -26,12 +28,12 @@ export const Navbar: FC<NavbarProps> = ({className, ...otherProps}) => {
     </div>
 
     <div className={styles.links}>
-
+      <LangSwitcher/>
       <AppLink to={RoutePath.main} >
-        Home
+        {t('home')}
       </AppLink>
       <AppLink to={RoutePath.about} >
-        About
+        {t('about')}
       </AppLink>
     </div>
 

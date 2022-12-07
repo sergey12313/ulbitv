@@ -1,1 +1,1 @@
-export * from './SidebarContext'
+export * from './SidebarContext';

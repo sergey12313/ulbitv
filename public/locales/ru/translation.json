@@ -2,6 +2,8 @@
   "home": "Главная",
   "about":  "О нас",
   "mainPageText": "Это главная страница",
-  "aboutPageText": "Это страница О нас"
+  "aboutPageText": "Это страница О нас",
+  "error": "Ошибка",
+  "loading": "Загрузка"
 
 }

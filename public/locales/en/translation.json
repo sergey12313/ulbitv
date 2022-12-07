@@ -4,5 +4,6 @@
   "mainPageText": "This is Main page",
   "aboutPageText": "This is about page",
   "error": "Error",
-  "loading": "Loading"
+  "loading": "Loading",
+  "notFoundPageText": "Page not found"
 }

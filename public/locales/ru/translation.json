@@ -4,6 +4,6 @@
   "mainPageText": "Это главная страница",
   "aboutPageText": "Это страница О нас",
   "error": "Ошибка",
-  "loading": "Загрузка"
-
+  "loading": "Загрузка",
+  "notFoundPageText": "Страница не найдена"
 }

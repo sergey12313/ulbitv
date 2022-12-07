@@ -1,0 +1,103 @@
+.Button {
+  cursor: pointer;
+  border-radius: 5px;
+  display: inline-flex;
+  outline: transparent solid 2px;
+  border: none;
+  color: inherit;
+  fill: currentcolor;
+  height: 36px;
+  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
+  min-width: 36px;
+
+  &.default {
+    &:focus-visible {
+      box-shadow: var(--shadows-outline);
+    }
+
+    &.dark {
+      background: var(--colors-white-alpha-200);
+
+      &:hover {
+        background: var(--colors-white-alpha-300);
+      }
+
+      &:active {
+        background: var(--colors-white-alpha-400);
+      }
+    }
+
+    &.light {
+      background: var(--colors-gray-100);
+
+      &:hover {
+        background: var(--colors-gray-200);
+      }
+
+      &:active {
+        background: var(--colors-gray-300);
+      }
+    }
+  }
+
+  &.outline {
+    background: var(--colors-transparent);
+
+    &:focus-visible {
+      box-shadow: var(--shadows-outline);
+    }
+
+    &.dark {
+      &:hover {
+        background: var(--colors-white-alpha-300);
+      }
+
+      &:active {
+        background: var(--colors-white-alpha-400);
+      }
+    }
+
+    &.light {
+      &:hover {
+        background: var(--colors-gray-200);
+      }
+
+      &:active {
+        background: var(--colors-gray-300);
+      }
+    }
+  }
+
+  &.primary {
+    &:focus-visible {
+      box-shadow: var(--shadows-outline);
+    }
+
+    &.dark {
+      background: var(--colors-teal-200);
+      color: var(--colors-gray-800);
+
+      &:hover {
+        background: var(--colors-teal-300);
+      }
+
+      &:active {
+        background: var(--colors-teal-400);
+      }
+    }
+
+    &.light {
+      background: var(--colors-teal-500);
+
+      &:hover {
+        background: var(--colors-teal-600);
+      }
+
+      &:active {
+        background: var(--colors-teal-700);
+      }
+    }
+  }
+}

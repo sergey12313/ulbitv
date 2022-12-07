@@ -1,0 +1,9 @@
+{
+  "home": "Home",
+  "about":  "About",
+  "mainPageText": "This is Main page",
+  "aboutPageText": "This is about page",
+  "error": "Error",
+  "loading": "Loading",
+  "notFoundPageText": "Page not found"
+}

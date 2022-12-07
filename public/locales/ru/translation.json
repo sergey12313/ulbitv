@@ -1,0 +1,9 @@
+{
+  "home": "Главная",
+  "about":  "О нас",
+  "mainPageText": "Это главная страница",
+  "aboutPageText": "Это страница О нас",
+  "error": "Ошибка",
+  "loading": "Загрузка",
+  "notFoundPageText": "Страница не найдена"
+}

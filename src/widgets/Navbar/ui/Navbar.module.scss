@@ -1,0 +1,27 @@
+.navbar {
+  width: 100%;
+  height: var(--navbar-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  box-shadow: var(--shadows-sm);
+
+  .menuButton {
+    border-radius: 50%;
+    height: 48px;
+    width: 48px;
+  }
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.leftBlock {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}

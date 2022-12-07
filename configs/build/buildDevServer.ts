@@ -6,6 +6,7 @@ export const buildDevServer = ({paths, port}: BuildOptions): DevServerConfigurat
         static: paths.public,
         open: true,
         historyApiFallback: true,
+        hot: true,
         port,
     }
 }

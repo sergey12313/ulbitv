@@ -1,5 +1,4 @@
 .sidebar {
-
   width: 250px;
   transition: width 0.3s;
   display: flex;
@@ -7,6 +6,7 @@
   align-items: end;
   padding-bottom: 10px;
 }
+
 .collapsed {
   width: 80px;
 }

@@ -3,7 +3,8 @@
   "about":  "About",
   "mainPageText": "This is Main page",
   "aboutPageText": "This is about page",
-  "error": "Error",
+  "error": "Unhandled error",
+  "refreshPage": "Reload page",
   "loading": "Loading",
   "notFoundPageText": "Page not found"
 }

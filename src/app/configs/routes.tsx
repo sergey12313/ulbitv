@@ -4,6 +4,7 @@ import { MainPage } from 'pages/MainPage';
 import { AboutPage } from 'pages/AboutPage';
 import i18n from 'app/configs/i18n/i18n';
 import { NotFoundPage } from 'pages/NotFoundPage';
+import { PageError } from 'widgets/PageError';
 
 export const enum AppRoutes {
   MAIN = 'main',
@@ -23,16 +24,25 @@ export const routes = createBrowserRouter([
     errorElement: <div>{i18n.t('error')}</div>,
     children: [
       {
-        index: true,
-        element: <MainPage />,
-      },
-      {
-        path: RoutePath.about,
-        element: <AboutPage />,
-      },
-      {
-        path: RoutePath.notFound,
-        element: <NotFoundPage />,
+        errorElement: <PageError />,
+        children: [
+          {
+            index: true,
+            element: <MainPage />,
+          },
+          {
+            path: RoutePath.about,
+            element: <AboutPage />,
+          },
+          {
+            path: RoutePath.notFound,
+            element: <NotFoundPage />,
+          },
+          {
+            path: 'hello/qwer',
+            element: <div>123</div>,
+          },
+        ],
       },
     ],
   },

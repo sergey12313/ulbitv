@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import styles from './LoaderPage.module.scss';
+import styles from './PageLoader.module.scss';
 import { Loader } from 'shared/ui/Loader/ui/Loader';
 
-export const LoaderPage: FC = () => {
+export const PageLoader: FC = () => {
   return (
     <div className={styles.loaderPage}>
       <Loader />
